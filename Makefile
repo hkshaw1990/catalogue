@@ -17,6 +17,9 @@ copy:
 release:
 	docker build -t $(NAME) -f ./docker/catalogue/Dockerfile-release .
 
+image-ppc64le:
+	docker build -t $(NAME) -f ./docker/catalogue/Dockerfile.ppc64le .
+
 test: 
 	GROUP=weaveworksdemos COMMIT=test ./scripts/build.sh
 	./test/test.sh unit.py
