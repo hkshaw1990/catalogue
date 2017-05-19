@@ -10,6 +10,7 @@ import (
 	"github.com/go-kit/kit/log"
 	stdopentracing "github.com/opentracing/opentracing-go"
 	zipkin "github.com/openzipkin/zipkin-go-opentracing"
+        "github.com/opentracing-contrib/perfevents/go"
 
 	"net/http"
 
@@ -68,6 +69,9 @@ func main() {
 		logger = log.NewContext(logger).With("caller", log.DefaultCaller)
 	}
 
+        var zipObs zipkin.Observer
+        zipObs = perfevents.NewObserver()
+
 	var tracer stdopentracing.Tracer
 	{
 		if *zip == "" {
@@ -84,7 +88,7 @@ func main() {
 				os.Exit(1)
 			}
 			tracer, err = zipkin.NewTracer(
-				zipkin.NewRecorder(collector, false, fmt.Sprintf("localhost:%v", port), ServiceName),
+				zipkin.NewRecorder(collector, false, fmt.Sprintf("localhost:%v", port), ServiceName), zipkin.WithObserver(zipObs),
 			)
 			if err != nil {
 				logger.Log("err", err)
