@@ -69,8 +69,7 @@ func main() {
 		logger = log.NewContext(logger).With("caller", log.DefaultCaller)
 	}
 
-        var zipObs zipkin.Observer
-        zipObs = perfevents.NewObserver()
+        obs := perfevents.NewObserver()
 
 	var tracer stdopentracing.Tracer
 	{
@@ -88,7 +87,7 @@ func main() {
 				os.Exit(1)
 			}
 			tracer, err = zipkin.NewTracer(
-				zipkin.NewRecorder(collector, false, fmt.Sprintf("localhost:%v", port), ServiceName), zipkin.WithObserver(zipObs),
+				zipkin.NewRecorder(collector, false, fmt.Sprintf("localhost:%v", port), ServiceName), zipkin.WithObserver(obs),
 			)
 			if err != nil {
 				logger.Log("err", err)
