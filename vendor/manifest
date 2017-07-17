@@ -412,10 +412,10 @@
 		},
 		{
 			"importpath": "github.com/openzipkin/zipkin-go-opentracing",
-			"repository": "https://github.com/platform-tracing/zipkin-go-opentracing",
+			"repository": "https://github.com/openzipkin/zipkin-go-opentracing.git",
 			"vcs": "git",
-			"revision": "e3d109a12eab19180a5bdb123ade80e25a8d313b",
-			"branch": "perfevents",
+			"revision": "7552a47402712b4d62c253d047d06030678798b5",
+			"branch": "master",
 			"notests": true,
 			"allfiles": true
 		},
@@ -429,10 +429,10 @@
 		},
 		{
 			"importpath": "github.com/opentracing-contrib/perfevents",
-                        "repository": "https://github.com/platform-tracing/perfevents.git",
+                        "repository": "https://github.com/opentracing-contrib/perfevents.git",
 			"vcs": "git",
-			"revision": "f32d925dad8a6da21f2d0ec8e637e73dad88ad24",
-			"branch": "perfevents",
+			"revision": "840bc97653434a39a6683e2bc753de6217fa0b2b",
+			"branch": "master",
 			"notests": true
 		},
 		{
