@@ -428,6 +428,14 @@
 			"notests": true
 		},
 		{
+			"importpath": "github.com/opentracing-contrib/go-observer",
+                        "repository": "https://github.com/opentracing-contrib/go-observer.git",
+			"vcs": "git",
+			"revision": "a52f2342449246d5bcc273e65cbdcfa5f7d6c63c",
+			"branch": "master",
+			"notests": true
+		},
+		{
 			"importpath": "github.com/opentracing-contrib/perfevents",
                         "repository": "https://github.com/opentracing-contrib/perfevents.git",
 			"vcs": "git",
