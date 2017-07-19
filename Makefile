@@ -20,6 +20,10 @@ release:
 image-ppc64le:
 	docker build -t $(NAME) -f ./docker/catalogue/Dockerfile.ppc64le .
 
+image-amd64:
+	docker build -t $(NAME) -f ./docker/catalogue/Dockerfile .
+
+
 test: 
 	GROUP=weaveworksdemos COMMIT=test ./scripts/build.sh
 	./test/test.sh unit.py
